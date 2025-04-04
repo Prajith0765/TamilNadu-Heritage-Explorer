@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Interests = () => {
   const navigate = useNavigate();
-  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
+  const [selectedInterests, setSelectedInterests] = useState([]);
 
   const interests = [
     'Beach', 'Mountains', 'Cities', 'Culture', 'Food & Wine',
@@ -12,23 +12,22 @@ const Interests = () => {
     'Sports', 'Music', 'Festivals', 'Local Experience', 'Eco Tourism'
   ];
 
-  const toggleInterest = (interest: string) => {
-    setSelectedInterests(prev =>
+  const toggleInterest = (interest) => {
+    setSelectedInterests((prev) =>
       prev.includes(interest)
-        ? prev.filter(i => i !== interest)
+        ? prev.filter((i) => i !== interest)
         : [...prev, interest]
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle interests submission here
     console.log('Selected interests:', selectedInterests);
     navigate('/login');
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
         <div>
           <h2 className="text-center text-3xl font-extrabold text-gray-900">

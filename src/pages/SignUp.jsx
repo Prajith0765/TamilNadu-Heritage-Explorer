@@ -11,7 +11,7 @@ const SignUp = () => {
     confirmPassword: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Handle signup logic here
     console.log('Signup submitted:', formData);
